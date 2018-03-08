@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Световен_рекорд_по_плуване
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double record = double.Parse(Console.ReadLine());
+            double distance = double.Parse(Console.ReadLine());
+            double time = double.Parse(Console.ReadLine());
+
+            double a = distance * time;
+            double b = Math.Floor(distance / 15);
+            double c = b * 12.5;
+
+            double totalTime = a + c;
+
+            if (totalTime >= record)
+            {
+                double diff = totalTime - record;
+                Console.WriteLine($"No, he failed! He was {diff:f2} seconds slower.");
+            }
+            else
+            {
+                Console.WriteLine($"Yes, he succeeded! The new world record is {totalTime:f2} seconds.");
+            }
+
+        }
+    }
+}
